@@ -123,3 +123,31 @@ button.formBtn {
     margin: 5px;
 }
 
+/* cv template style goes here */
+/*  A4 size in inches: 8.27 x 11.69 in. 
+A4 size in centimeters: 21.01 x 29.62 cm. 
+A4 size in millimeters: 210 x 297 mm. 
+A4 size in pixels at 72 DPI: 595 x 842 pixels. */
+.a4{
+    height: 842px;
+    width: 595px;
+}
+.cvName{
+    text-align: center;
+}
+
+.cvImg {
+    width: 35% !important;
+    text-align-last: center;
+    padding: 30px;
+}
+
+.cvImg img{
+    height: auto;
+    width: 200px;
+    clip-path: circle(37% at 50% 50%);
+}
+.cvProfile{
+    width: 60% !important;
+    padding: 30px;
+}
