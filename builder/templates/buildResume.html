@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}
+Dash-Board
+{% endblock %}
+
+{% block content %}
+   <div class="row centralize">
+    <div class="disBanner">
+        <h1>test</h1>
+        <div id="forms">
+            <button type="button" class="btn btn-primary activeState" data-toggle="collapse" data-target="#detailsForm" aria-expanded="true" >Details</button>
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#educationForm">Education</button>
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#experienceForm">Experience</button>
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#hardskillForm">Hard Skill</button>
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#languageForm">Langauges</button>
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#socialForm">Social Links</button>
+<div class="m-3 tst">
+    {% include "forms/formDetails.html"%}
+    {% include "forms/formEdu.html"%}
+    {% include "forms/formExp.html"%}
+    {% include "forms/formLang.html"%}
+    {% include "forms/formSkill.html"%}
+    {% include "forms/formSocia.html"%}
+    
+</div>
+
+        </div>
+
+
+
+    </div>
+   </div>
+
+   {% include "resumes/cv1.html"%}
+
+   <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(
+function () {
+  'use strict'
+
+  var $forms = $('#forms');
+$forms.on('show.bs.collapse','.collapse', function() {
+    $forms.find('.collapse.in').collapse('hide');
+});
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+   </script>
+
+   <script>
+   // Add active class to the current button (highlight it)
+var header = document.getElementById("forms");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("activeState");
+  current[0].className = current[0].className.replace(" activeState", "");
+  this.className += " activeState";
+  });
+}
+   </script>
+
+
+
+{% endblock %}

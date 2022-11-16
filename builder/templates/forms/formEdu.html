@@ -1,0 +1,63 @@
+<!-- 
+course     
+university 
+country    
+degree     
+discipline 
+start_dt   
+end_dt     
+currently  
+description 
+ -->
+<div id="educationForm" class="collapse" data-parent="#forms">
+  <form class="row g-3 form-d-f">
+    <div class="col-md-2">
+      <label for="validationDefault01" class="form-label">Course</label>
+      <input type="text" class="form-control" id="validationDefault01" value="" placeholder="Course Program" required>
+    </div>
+    <div class="col-md-2">
+      <label for="validationDefault02" class="form-label">University</label>
+      <input type="text" class="form-control" id="validationDefault02" value="" placeholder="University Name" required>
+    </div>
+    <div class="col-md-2">
+      <label for="validationDefault04Discipline" class="form-label">Discipline</label>
+      <input type="text" class="form-control" id="validationDefault04Discipline" value="" placeholder="e.g. Computer scientest" required>
+    </div>
+    <div class="col-md-2">
+      <label for="validationDefault04Degree" class="form-label">Degree</label>
+      <input type="text" class="form-control" id="validationDefault04Degree" value="" placeholder="e.g. PhD, Bachelor or high school." required>
+    </div>
+    <div class="col-md-2">
+      <label for="validationDefault04Country" class="form-label">Country</label>
+      <input type="text" class="form-control" id="validationDefault04Country" value="" placeholder="Country Name" required>
+    </div>
+    <p><br></p>
+    <div class="col-md-2">
+      <label for="startDateJob" class="form-label">Start date</label>
+      <div class="input-group">
+        <input type="date" class="form-control" id="startDateJob" required>
+      </div>
+    </div> 
+    <div class="col-md-2">
+      <label for="endDateJob" class="form-label">End date</label>
+      <input type="date" class="form-control" id="endDateJob" required>
+    </div>
+    <div class="col-md-1 checkMid">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheckCurrent" >
+        <label class="form-check-label" for="invalidCheckCurrent">
+          Current
+        </label>
+      </div>
+    </div>
+    <br>
+    <p>Please, try to describe your experience in a brief manner.</p>
+    <div class="col-md-6">
+      <label for="validationDefault05" class="form-label">Description</label>
+      <textarea type="text" class="form-control" id="validationDefault05" placeholder="Your Description" required></textarea>
+    </div>
+    <div class="col-12">
+      <button class="formBtn shaBor20 btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+  </div>

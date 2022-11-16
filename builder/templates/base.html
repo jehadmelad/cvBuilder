@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href=" {{url_for('static', filename='css/main.css')}}">
+  <title>  
+    {% block title %} {% endblock %}
+  </title>
+  <link rel="stylesheet" href=" {{url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css')}}">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+
+ 
+
+  <!-- Bootstrap core CSS -->
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/"> -->
+  <link href="https://getbootstrap.com/docs/4.0/examples/starter-template/starter-template.css" rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" > -->
+
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shrinkWidth shaBor20">
+    <a class="navbar-brand" href="#">Dev</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- profile avatar -->
+    {% if user.is_authenticated%}
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <p class="text-white m-0">{{"@"+user.fname +"_"+ user.lname}}</p>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+             <!-- <img src="{{'../static/avatars/'+user.title+'.svg'}}" class="rounded-circle" height="22" alt="Avatar" loading="lazy" /> -->
+             <i class="bi bi-person-check-fill text-success"></i>
+            </a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <!-- <a class="dropdown-item" href="#">Profile</a> -->
+            
+            <a class="dropdown-item bg-danger text-white" href="/logout"><i class="bi bi-door-open-fill text-dark"></i> Logout</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/buildResume">Create cv </a>
+        </li>
+      </ul>
+    </div>
+    {%else%}
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/signup">Signup</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="/buildResume">buildResume </a>
+        </li> -->
+      </ul>
+    </div>
+    {%endif%}
+
+  </nav>
+
+  <main role="main" class="container">
+    <!-- Alert buttons  -->
+    {% with alerts = get_flashed_messages(with_categories=true) %}
+    {%if alerts%}
+    {%for category, alert in alerts%}
+    {%if category == 'error'%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Error occured !!</strong> {{alert}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {%elif category == 'warning'%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>warning !!</strong> {{alert}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {%elif category == 'singin-error'%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>warning !!</strong> {{alert}} <a href="/login">Sign-in.</a>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {%else%}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Congraduation !!</strong> {{alert}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {%endif%}
+    {%endfor%}
+
+    {%endif%}
+    {%endwith%}
+    {%block content%}
+
+    {%endblock%}
+
+
+  </main><!-- /.container -->
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  
+</body>
+
+</html>
