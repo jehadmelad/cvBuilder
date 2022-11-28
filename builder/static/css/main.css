@@ -129,7 +129,7 @@ A4 size in centimeters: 21.01 x 29.62 cm.
 A4 size in millimeters: 210 x 297 mm. 
 A4 size in pixels at 72 DPI: 595 x 842 pixels. */
 .a4{
-    height: 842px;
+    height: auto;
     width: 595px;
 }
 .cvName{
@@ -150,4 +150,68 @@ A4 size in pixels at 72 DPI: 595 x 842 pixels. */
 .cvProfile{
     width: 60% !important;
     padding: 30px;
+}
+.cvBox{
+    text-align: -webkit-center;
+}
+/* .cvBox p{
+    margin: 0px !important;
+} */
+.cvTag{
+    min-width: 10%;
+    padding: 7px;
+    margin: 6px;
+    text-align-last: center;
+    box-shadow: 0px 0px 3px 0px #0000006b;
+}
+.cvBorRad{
+    border-radius: 15px;
+
+}
+.cvDsFlex{
+    display: flex!important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cvWidgeR{
+    width: 90%;
+    margin: 15px;
+}
+.cvOutline{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+}
+.cvLine{
+    border-left: 9px solid #8c8c8c;
+    padding: 5px;
+}
+.cvLine h6{
+    font-size: 12px;
+
+}
+.cvLine h5{
+    font-size: 18px;
+    
+}
+.cvLine h4{
+    font-size: 14px;
+
+}
+
+.cvBox h3 , .cvWidgeR h3{
+    margin-bottom: 30px;
+}
+.cvfooter{
+    height: 15px;
+    width: 100%;
+    width: -webkit-fill-available;
+
+}
+
+.cvRight{
+    border-left: 7px dotted black !important;
 }
