@@ -38,31 +38,35 @@
             </div>
             <div class="cvBox">
                 <h3>Languages</h3>
-                <div class="cvTag cvBorRad">Arabic</div>
-                <div class="cvTag cvBorRad">English</div>
-                <div class="cvTag cvBorRad">French</div>
+                <div class="lang">
+                    <div class="cvTag cvBorRad"><div class="handleLang"></div>Arabic</div>
+                    <div class="cvTag cvBorRad"><div class="handleLang"></div>English</div>
+                    <div class="cvTag cvBorRad"><div class="handleLang"></div>French</div>
+                </div>
                 <br>
             </div>
             <div class="cvBox">
                 <h3>Soft Skills</h3>
                 <div class="cvDsFlex">
-                    <div class="cvTag cvBorRad">good</div>
-                    <div class="cvTag cvBorRad">Self-motivation</div>
-                    <div class="cvTag cvBorRad">Responsibality</div>
-                    <div class="cvTag cvBorRad">Quick learning</div>
+                    <div class="cvTag cvBorRad"><div class="handleSkill"></div>good</div>
+                    <div class="cvTag cvBorRad"><div class="handleSkill"></div>Self-motivation</div>
+                    <div class="cvTag cvBorRad"><div class="handleSkill"></div>Responsibality</div>
+                    <div class="cvTag cvBorRad"><div class="handleSkill"></div>Quick learning</div>
                 </div>
                 <br>
 
             </div>
         </div>
+        
         <div class="col-8 cvRight bg-white">
             <div class="cvWidgeR">
                 <h3>Experience</h3>
-                <div class="cvBoxR">
+                <div class="cvBoxR exp">
                     <div class="cvOutline">
-                        <div class="cvLine">
+                       <div class="cvOutlineDraDro"></div>
+                       <div class="cvLine">
                             <h6>Feb 2 2020  &nbsp;/ &nbsp;Feb 2 2020</h6>
-                            <h5>Software dev</h5>
+                            <h5>Software dev 1</h5>
                             <h6>Ulex Innov</h6>
                         </div>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -73,9 +77,10 @@
                             <br>                     
                     </div>
                     <div class="cvOutline">
-                        <div class="cvLine">
+                       <div class="cvOutlineDraDro"></div>
+                       <div class="cvLine">
                             <h6>Feb 2 2020  &nbsp;/ &nbsp;Feb 2 2020</h6>
-                            <h5>Software dev</h5>
+                            <h5>Software dev 2</h5>
                             <h6>Ulex Innov</h6>
                         </div>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -86,9 +91,11 @@
                             <br>                     
                     </div>
                     <div class="cvOutline">
+
+                        <div class="cvOutlineDraDro"></div>
                         <div class="cvLine">
                             <h6>Feb 2 2020  &nbsp;/ &nbsp;Feb 2 2020</h6>
-                            <h5>Software dev</h5>
+                            <h5>Software dev 3</h5>
                             <h6>Ulex Innov</h6>
                         </div>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -103,11 +110,13 @@
             </div>
             <div class="cvWidgeR">
                 <h3>Education</h3>
-                <div class="cvBoxR">
+                <div class="cvBoxR edu">
                     <div class="cvOutline">
+                        <div class="cvOutlineDraDro"></div>
+
                         <div class="cvLine">
                             <h6>Feb 2 2020  &nbsp;/ &nbsp;Feb 2 2020</h6>
-                            <h5>Software dev</h5>
+                            <h5>Software dev edu 1</h5>
                             <h6>Ulex Innov</h6>
                         </div>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -118,9 +127,11 @@
                             <br>                     
                     </div>
                     <div class="cvOutline">
+                        <div class="cvOutlineDraDro"></div>
+
                         <div class="cvLine">
                             <h6>Feb 2 2020  &nbsp;/ &nbsp;Feb 2 2020</h6>
-                            <h5>Software dev</h5>
+                            <h5>Software dev edu 2</h5>
                             <h6>Ulex Innov</h6>
                         </div>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -149,4 +160,31 @@
 
 </div>
 
+
+<script>
+    
+    const sortcvTag = document.querySelector(".lang")
+
+    const sortExp = document.querySelector(".exp")
+    
+    const sortEdu = document.querySelector(".edu")
+    new Sortable(
+        sortExp, {
+            Animation: 360,
+            handle: '.cvOutlineDraDro'
+        }
+    );
+    new Sortable(
+        sortEdu, {
+            Animation: 360,
+            handle: '.cvOutlineDraDro'
+        }
+    );
+    new Sortable(
+        sortcvTag, {
+            Animation: 360,
+            handle: '.handleLang'
+        }
+    );
+</script>
 {% endblock %}

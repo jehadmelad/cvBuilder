@@ -28,3 +28,4 @@ function generatePDF() {
     // New Promise-based usage:
     html2pdf().set(opt).from(element).save();
 }
+
